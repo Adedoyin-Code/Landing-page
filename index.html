@@ -593,6 +593,7 @@
         }
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
   <body>
     <header>
@@ -659,6 +660,14 @@
               <input type="text" id="business-top" name="business" required />
             </div>
             <div class="field">
+              <label for="email-top">Email Address</label>
+              <input type="email" id="email-top" name="email" required />
+            </div>
+            <div class="field">
+              <label for="phone-top">Phone Number</label>
+              <input type="tel" id="phone-top" name="phone" required />
+            </div>
+            <div class="field">
               <label for="address-top">Business Physical Address</label>
               <input type="text" id="address-top" name="address" required />
             </div>
@@ -718,6 +727,7 @@
                 id="goal-top"
                 name="goal"
                 placeholder="Tell us what success looks like for your business..."
+                required
               ></textarea>
             </div>
             <button type="submit" class="btn btn-gold form-submit">
@@ -774,6 +784,14 @@
                 name="business"
                 required
               />
+            </div>
+            <div class="field">
+              <label for="email-bottom">Email Address</label>
+              <input type="email" id="email-bottom" name="email" required />
+            </div>
+            <div class="field">
+              <label for="phone-bottom">Phone Number</label>
+              <input type="tel" id="phone-bottom" name="phone" required />
             </div>
             <div class="field">
               <label for="address-bottom">Business Physical Address</label>
@@ -835,6 +853,7 @@
                 id="goal-bottom"
                 name="goal"
                 placeholder="Tell us what success looks like for your business..."
+                required
               ></textarea>
             </div>
             <button type="submit" class="btn btn-gold form-submit">
@@ -1057,16 +1076,22 @@
         });
       }
 
-      // Both lead forms submit the same way: build an email to info@dularis.com
+      // EmailJS setup
+      emailjs.init({ publicKey: "5DbZFemYycK1u73e4" });
+
+      // Both lead forms submit the same way: send straight to info@dularis.com via EmailJS
       const leadForms = document.querySelectorAll(".lead-form");
       leadForms.forEach(function (form) {
         const status = form.querySelector(".form-status");
+        const submitBtn = form.querySelector(".form-submit");
 
         form.addEventListener("submit", function (e) {
           e.preventDefault();
 
           const name = form.querySelector('[name="name"]').value.trim();
           const business = form.querySelector('[name="business"]').value.trim();
+          const email = form.querySelector('[name="email"]').value.trim();
+          const phone = form.querySelector('[name="phone"]').value.trim();
           const address = form.querySelector('[name="address"]').value.trim();
           const instagram = form
             .querySelector('[name="instagram"]')
@@ -1076,31 +1101,43 @@
           const service = form.querySelector('[name="service"]').value;
           const goal = form.querySelector('[name="goal"]').value.trim();
 
-          if (!name || !business || !address) {
+          if (!name || !business || !email || !phone || !address || !goal) {
+            status.style.color = "var(--gold-dim)";
             status.textContent =
-              "Please fill in your name, business name, and address.";
+              "Please fill in your name, business name, email, phone, address, and what you want to achieve.";
             return;
           }
 
-          const lines = [
-            "Name: " + name,
-            "Business: " + business,
-            "Address: " + address,
-            instagram ? "Instagram: " + instagram : null,
-            facebook ? "Facebook: " + facebook : null,
-            linkedin ? "LinkedIn: " + linkedin : null,
-            "What they want us to do: " + service,
-            goal ? "What they want to achieve: " + goal : null,
-          ].filter(Boolean);
+          submitBtn.disabled = true;
+          status.style.color = "var(--gold-dim)";
+          status.textContent = "Sending...";
 
-          const subject = encodeURIComponent(
-            "New lead from Dularis landing page: " + business,
-          );
-          const body = encodeURIComponent(lines.join("\n"));
-          status.textContent = "Opening your email app to send this to us...";
-          window.location.href =
-            "mailto:info@dularis.com?subject=" + subject + "&body=" + body;
-          form.reset();
+          emailjs
+            .send("service_0b7ycbl", "template_vm6gn7q", {
+              name: name,
+              business: business,
+              email: email,
+              phone: phone,
+              address: address,
+              instagram: instagram || "Not provided",
+              facebook: facebook || "Not provided",
+              linkedin: linkedin || "Not provided",
+              service: service,
+              goal: goal,
+            })
+            .then(function () {
+              status.style.color = "#4ade80";
+              status.textContent =
+                "Thanks! We've got your details and will reach out within 24 hours.";
+              form.reset();
+              submitBtn.disabled = false;
+            })
+            .catch(function () {
+              status.style.color = "#f87171";
+              status.textContent =
+                "Something went wrong sending that. Please try again or call +234 906 848 4193.";
+              submitBtn.disabled = false;
+            });
         });
       });
     </script>
