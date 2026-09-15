@@ -169,124 +169,149 @@
         background: var(--ink);
         color: var(--paper);
       }
-      .btn-outline-light {
-        background: transparent;
-        color: var(--paper);
-        border-color: var(--line-light);
-      }
-      .btn-outline-light:hover {
-        background: var(--paper);
-        color: var(--ink);
-      }
 
-      /* ---------- hero ---------- */
-      .hero {
-        padding: 72px 0 56px;
+      /* ---------- intro / hero ---------- */
+      .intro {
+        padding: 64px 0 0;
       }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 56px;
-        align-items: start;
-      }
-      @media (max-width: 860px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
+      .intro .wrap {
+        max-width: 760px;
       }
       .eyebrow {
         font-size: 13px;
         color: var(--teal);
         font-weight: 600;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
+      }
+      .intro p.body-text {
+        font-size: 16.5px;
+        color: var(--stone);
+        margin-bottom: 16px;
+        max-width: 64ch;
+      }
+      .hero {
+        padding: 40px 0 56px;
+      }
+      .hero .wrap {
+        max-width: 760px;
       }
       .hero h1 {
-        font-size: clamp(34px, 5vw, 56px);
-        line-height: 1.06;
+        font-size: clamp(32px, 5vw, 50px);
+        line-height: 1.08;
         font-weight: 600;
         letter-spacing: -0.02em;
-        margin-bottom: 22px;
+        margin-bottom: 18px;
       }
       .hero p.lead {
-        font-size: 18px;
+        font-size: 17px;
         color: var(--stone);
-        max-width: 46ch;
-        margin-bottom: 32px;
-      }
-      .hero-ctas {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin-bottom: 36px;
-      }
-      .hero-note {
-        font-size: 13px;
-        color: var(--stone);
-      }
-      .stat-card {
-        background: var(--ink);
-        color: var(--paper);
-        padding: 32px;
-        border-radius: 2px;
-        position: relative;
-      }
-      .stat-row {
-        display: flex;
-        justify-content: space-between;
-        padding: 16px 0;
-        border-bottom: 1px solid var(--line-light);
-      }
-      .stat-row:last-child {
-        border-bottom: none;
-      }
-      .stat-num {
-        font-family: "Fraunces", serif;
-        font-size: 30px;
-        font-weight: 600;
-        color: var(--gold);
-      }
-      .stat-label {
-        font-size: 13px;
-        color: rgba(250, 246, 238, 0.72);
-        max-width: 16ch;
-        text-align: right;
+        max-width: 52ch;
+        margin-bottom: 6px;
       }
 
-      /* ---------- agitation strip ---------- */
-      .strip {
+      /* ---------- lead form ---------- */
+      .form-section {
         background: var(--ink);
         color: var(--paper);
       }
-      .strip .wrap {
-        padding: 0 24px;
+      .form-section .wrap {
+        max-width: 640px;
       }
-      .strip-grid {
+      .form-section .form-head {
+        margin-bottom: 28px;
+      }
+      .form-section .form-head h2 {
+        font-size: clamp(22px, 3vw, 28px);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .form-section .form-head p {
+        color: rgba(250, 246, 238, 0.7);
+        font-size: 14.5px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .form-row {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
       }
-      @media (max-width: 780px) {
-        .strip-grid {
+      @media (max-width: 480px) {
+        .form-row {
           grid-template-columns: 1fr;
-          gap: 28px;
         }
       }
-      .strip h3 {
-        font-size: 19px;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-      .strip p {
-        font-size: 14.5px;
-        color: rgba(250, 246, 238, 0.7);
-      }
-      .strip-num {
-        font-family: "Fraunces", serif;
-        color: var(--gold);
-        font-size: 15px;
-        margin-bottom: 14px;
+      label {
+        font-size: 12.5px;
+        color: rgba(250, 246, 238, 0.65);
+        margin-bottom: 6px;
         display: block;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        background: var(--ink-soft);
+        border: 1px solid var(--line-light);
+        color: var(--paper);
+        padding: 11px 12px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        border-radius: 2px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid var(--gold);
+        outline-offset: 1px;
+      }
+      textarea {
+        min-height: 88px;
+        resize: vertical;
+      }
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23C9962E'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+      .field-note {
+        font-size: 12px;
+        color: rgba(250, 246, 238, 0.5);
+        margin-top: 4px;
+      }
+      .form-submit {
+        margin-top: 6px;
+      }
+      .form-status {
+        font-size: 13px;
+        color: var(--gold-dim);
+        margin-top: 8px;
+        min-height: 18px;
+      }
+
+      /* ---------- story ---------- */
+      .story .wrap {
+        max-width: 700px;
+      }
+      .story h2 {
+        font-size: clamp(24px, 3.4vw, 32px);
+        font-weight: 600;
+        margin-bottom: 18px;
+        letter-spacing: -0.01em;
+      }
+      .story p {
+        font-size: 16px;
+        color: var(--stone);
+        margin-bottom: 16px;
+        max-width: 64ch;
       }
 
       /* ---------- services ---------- */
@@ -355,40 +380,6 @@
         display: block;
       }
 
-      /* ---------- process ---------- */
-      .process {
-        background: var(--paper-dim);
-      }
-      .process-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-      }
-      @media (max-width: 780px) {
-        .process-grid {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-      }
-      .process-step .num {
-        font-family: "Fraunces", serif;
-        font-size: 44px;
-        color: var(--gold-dim);
-        font-weight: 600;
-        line-height: 1;
-        margin-bottom: 16px;
-      }
-      .process-step h3 {
-        font-size: 19px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-family: "Inter", sans-serif;
-      }
-      .process-step p {
-        color: var(--stone);
-        font-size: 14.5px;
-      }
-
       /* ---------- packages ---------- */
       .pkg-grid {
         display: grid;
@@ -438,19 +429,13 @@
         font-weight: 600;
         margin-bottom: 6px;
       }
-      .pkg .price {
-        font-size: 26px;
-        font-weight: 600;
-        margin: 14px 0 4px;
-        font-family: "Fraunces", serif;
-      }
-      .pkg .price-sub {
-        font-size: 12.5px;
+      .pkg .pkg-desc {
+        font-size: 13.5px;
         color: var(--stone);
-        margin-bottom: 22px;
+        margin-bottom: 18px;
       }
-      .pkg.popular .price-sub {
-        color: rgba(250, 246, 238, 0.65);
+      .pkg.popular .pkg-desc {
+        color: rgba(250, 246, 238, 0.7);
       }
       .pkg ul {
         list-style: none;
@@ -468,14 +453,6 @@
       }
       .pkg li:first-child {
         border-top: none;
-      }
-      .pkg-desc {
-        font-size: 13.5px;
-        color: var(--stone);
-        margin-bottom: 18px;
-      }
-      .pkg.popular .pkg-desc {
-        color: rgba(250, 246, 238, 0.7);
       }
 
       /* ---------- faq ---------- */
@@ -517,108 +494,6 @@
         max-width: 64ch;
       }
 
-      /* ---------- final cta / form ---------- */
-      .cta-final {
-        background: var(--ink);
-        color: var(--paper);
-      }
-      .cta-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 56px;
-        align-items: start;
-      }
-      @media (max-width: 860px) {
-        .cta-grid {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-      }
-      .cta-final h2 {
-        font-size: clamp(26px, 3.6vw, 36px);
-        font-weight: 600;
-        margin-bottom: 16px;
-        letter-spacing: -0.01em;
-      }
-      .cta-final p.lead {
-        color: rgba(250, 246, 238, 0.72);
-        font-size: 15.5px;
-        margin-bottom: 28px;
-        max-width: 44ch;
-      }
-      .contact-detail {
-        font-size: 14px;
-        color: rgba(250, 246, 238, 0.7);
-        margin-bottom: 10px;
-      }
-      .contact-detail b {
-        color: var(--paper);
-        font-weight: 600;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-      @media (max-width: 480px) {
-        .form-row {
-          grid-template-columns: 1fr;
-        }
-      }
-      label {
-        font-size: 12.5px;
-        color: rgba(250, 246, 238, 0.65);
-        margin-bottom: 6px;
-        display: block;
-      }
-      input,
-      select,
-      textarea {
-        width: 100%;
-        background: var(--ink-soft);
-        border: 1px solid var(--line-light);
-        color: var(--paper);
-        padding: 11px 12px;
-        font-family: "Inter", sans-serif;
-        font-size: 14px;
-        border-radius: 2px;
-      }
-      input:focus,
-      select:focus,
-      textarea:focus {
-        outline: 2px solid var(--gold);
-        outline-offset: 1px;
-      }
-      textarea {
-        min-height: 88px;
-        resize: vertical;
-      }
-      select {
-        appearance: none;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23C9962E'/></svg>");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-      }
-      .field {
-        display: flex;
-        flex-direction: column;
-      }
-      .form-submit {
-        margin-top: 6px;
-      }
-      .form-status {
-        font-size: 13px;
-        color: var(--gold-dim);
-        margin-top: 8px;
-        min-height: 18px;
-      }
-
       /* ---------- footer ---------- */
       footer {
         padding: 32px 0;
@@ -636,15 +511,7 @@
         color: var(--stone);
       }
 
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-      }
-
-      /* ---------- hero entrance (plays once on load) ---------- */
+      /* ---------- entrance / reveal ---------- */
       .hero-anim {
         opacity: 0;
         transform: translateY(18px);
@@ -662,17 +529,12 @@
       .hero-anim.d4 {
         animation-delay: 0.4s;
       }
-      .hero-anim.d5 {
-        animation-delay: 0.5s;
-      }
       @keyframes heroIn {
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
-
-      /* ---------- scroll reveal (plays once per element, on scroll into view) ---------- */
       .reveal {
         opacity: 0;
         transform: translateY(24px);
@@ -696,16 +558,7 @@
       .reveal:nth-child(4) {
         transition-delay: 0.24s;
       }
-      .reveal:nth-child(5) {
-        transition-delay: 0.32s;
-      }
-      .reveal:nth-child(6) {
-        transition-delay: 0.4s;
-      }
-
-      /* ---------- interactive lift on hover ---------- */
       .service-cell,
-      .process-step,
       .pkg {
         transition:
           transform 0.25s ease,
@@ -715,12 +568,6 @@
       .pkg:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 24px rgba(16, 26, 44, 0.08);
-      }
-      .process-step:hover .num {
-        transform: translateX(4px);
-      }
-      .process-step .num {
-        transition: transform 0.25s ease;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -741,8 +588,7 @@
           transition: none !important;
         }
         .service-cell:hover,
-        .pkg:hover,
-        .process-step:hover .num {
+        .pkg:hover {
           transform: none;
         }
       }
@@ -754,95 +600,248 @@
         <a href="#" class="logo">Dularis</a>
         <div class="header-cta">
           <a href="tel:+2349068484193" class="phone-link">+234 906 848 4193</a>
-          <a
-            href="https://wa.me/2349068484193"
-            class="btn btn-ink"
-            target="_blank"
-            rel="noopener"
-            >WhatsApp Us</a
-          >
+          <a href="#form-top" class="btn btn-gold">Fill The Form</a>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="wrap hero-grid">
-          <div>
-            <p class="eyebrow hero-anim d1">
-              DIGITAL BRAND MANAGEMENT & CREATIVE SOLUTIONS, LAGOS
-            </p>
-            <h1 class="hero-anim d2">
-              Your next customer is already searching. Will they find you or
-              your competitor?
-            </h1>
-            <p class="lead hero-anim d3">
-              Dularis runs your Meta ads, builds the website they land on, and
-              keeps your brand looking credible. One team, no juggling
-              freelancers, live in days.
-            </p>
-            <div class="hero-ctas hero-anim d4">
-              <a href="#contact" class="btn btn-gold"
-                >Book Your Discovery Meeting</a
-              >
-              <a href="#packages" class="btn btn-outline">See What We Offer</a>
-            </div>
-            <p class="hero-note hero-anim d5">
-              No pressure. No unnecessary packages. Just a conversation about
-              your business.
-            </p>
-          </div>
-          <div class="stat-card hero-anim d3">
-            <div class="stat-row">
-              <span class="stat-num">19</span>
-              <span class="stat-label">services under one roof</span>
-            </div>
-            <div class="stat-row">
-              <span class="stat-num">1</span>
-              <span class="stat-label">team, no silos, no handoffs</span>
-            </div>
-            <div class="stat-row">
-              <span class="stat-num">100%</span>
-              <span class="stat-label">transparent, upfront pricing</span>
-            </div>
-            <div class="stat-row">
-              <span class="stat-num">24h</span>
-              <span class="stat-label">typical response time</span>
-            </div>
-          </div>
+      <!-- BRIEF INTRO + HERO -->
+      <section class="intro">
+        <div class="wrap">
+          <p class="eyebrow hero-anim d1">DULARIS, LAGOS</p>
+          <p class="body-text hero-anim d2">
+            Dularis is a digital agency in Lagos that builds websites, runs Meta
+            ad campaigns, and manages the brand and social presence businesses
+            need to be found online, all handled by one team.
+          </p>
+          <p class="body-text hero-anim d3">
+            Instead of juggling a designer, an ads person, and a social media
+            manager who never talk to each other, you get one team that builds
+            your website, sets up your ads, and keeps your brand consistent
+            everywhere, so your business shows up looking ready for customers.
+          </p>
         </div>
       </section>
 
-      <!-- AGITATION / WHY -->
-      <section class="strip">
+      <section class="hero">
         <div class="wrap">
-          <div class="strip-grid">
-            <div class="reveal">
-              <span class="strip-num">The old way</span>
-              <h3>Three freelancers, three stories</h3>
-              <p>
-                Your designer, your ad guy, and your social media person don't
-                talk to each other, and your brand looks like it.
-              </p>
-            </div>
-            <div class="reveal">
-              <span class="strip-num">The old way</span>
-              <h3>Months to get live</h3>
-              <p>
-                By the time the website's finally done, the campaign you wanted
-                to run has lost its moment.
-              </p>
-            </div>
-            <div class="reveal">
-              <span class="strip-num">The Dularis way</span>
-              <h3>One team, days not months, one clear price</h3>
-              <p>
-                Strategy, design, website, and Meta ads, handled together, with
-                hosting and maintenance that doesn't disappear after launch.
-              </p>
-            </div>
+          <h1 class="hero-anim d1">
+            Take your business or brand to the next level through sustainable
+            digital solutions.
+          </h1>
+          <p class="lead hero-anim d2">
+            Fill the form below and our team will have a discovery session with
+            your business within the next 24 hours, so we understand exactly
+            what you need and what we can do for you.
+          </p>
+        </div>
+      </section>
+
+      <!-- LEAD FORM (TOP) -->
+      <section class="form-section" id="form-top">
+        <div class="wrap">
+          <div class="form-head">
+            <h2>Tell us about your business</h2>
+            <p>
+              Fill this in and we'll get in contact with you within a maximum of
+              24 hours.
+            </p>
           </div>
+
+          <form class="lead-form">
+            <div class="field">
+              <label for="name-top">Your Name</label>
+              <input type="text" id="name-top" name="name" required />
+            </div>
+            <div class="field">
+              <label for="business-top">Business Name</label>
+              <input type="text" id="business-top" name="business" required />
+            </div>
+            <div class="field">
+              <label for="address-top">Business Physical Address</label>
+              <input type="text" id="address-top" name="address" required />
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="ig-top">Instagram Handle</label>
+                <input
+                  type="text"
+                  id="ig-top"
+                  name="instagram"
+                  placeholder="@yourbusiness"
+                />
+              </div>
+              <div class="field">
+                <label for="fb-top">Facebook Handle</label>
+                <input
+                  type="text"
+                  id="fb-top"
+                  name="facebook"
+                  placeholder="@yourbusiness"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="li-top">LinkedIn Handle</label>
+              <input
+                type="text"
+                id="li-top"
+                name="linkedin"
+                placeholder="@yourbusiness"
+              />
+              <p class="field-note">
+                Leave any of the above blank if you're not on that platform.
+              </p>
+            </div>
+            <div class="field">
+              <label for="service-top"
+                >What do you want us to do for you?</label
+              >
+              <select id="service-top" name="service">
+                <option value="Website Development">Website Development</option>
+                <option value="Meta Ads Management">Meta Ads Management</option>
+                <option value="Social Media Management">
+                  Social Media Management
+                </option>
+                <option value="Brand Identity">Brand Identity</option>
+                <option value="Promotional Video">Promotional Video</option>
+                <option value="Full Package">
+                  Full Package (Website, Ads &amp; Social)
+                </option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="goal-top">What do you want to achieve?</label>
+              <textarea
+                id="goal-top"
+                name="goal"
+                placeholder="Tell us what success looks like for your business..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit">
+              Submit
+            </button>
+            <p class="form-status"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="story">
+        <div class="wrap">
+          <p class="eyebrow reveal">OUR STORY</p>
+          <h2 class="reveal">Why Dularis exists</h2>
+          <p class="reveal">
+            Too many businesses lose customers not because their product isn't
+            good enough, but because they're hard to find online, or because
+            their website, ads, and social media all tell a different story.
+            Dularis was built to fix that: one team handling your website, your
+            Meta ads, and your brand together, so everything a customer sees
+            points the same way.
+          </p>
+          <p class="reveal">
+            We work with business owners across Lagos and beyond who want to
+            look as credible online as they are in person, and who want it done
+            fast, transparently priced, and properly maintained after launch,
+            not abandoned once the invoice is paid.
+          </p>
+        </div>
+      </section>
+
+      <!-- LEAD FORM (AFTER STORY) -->
+      <section class="form-section" id="form-bottom">
+        <div class="wrap">
+          <div class="form-head">
+            <h2>Ready to get started?</h2>
+            <p>
+              Fill this in and we'll get in contact with you within a maximum of
+              24 hours.
+            </p>
+          </div>
+
+          <form class="lead-form">
+            <div class="field">
+              <label for="name-bottom">Your Name</label>
+              <input type="text" id="name-bottom" name="name" required />
+            </div>
+            <div class="field">
+              <label for="business-bottom">Business Name</label>
+              <input
+                type="text"
+                id="business-bottom"
+                name="business"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="address-bottom">Business Physical Address</label>
+              <input type="text" id="address-bottom" name="address" required />
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="ig-bottom">Instagram Handle</label>
+                <input
+                  type="text"
+                  id="ig-bottom"
+                  name="instagram"
+                  placeholder="@yourbusiness"
+                />
+              </div>
+              <div class="field">
+                <label for="fb-bottom">Facebook Handle</label>
+                <input
+                  type="text"
+                  id="fb-bottom"
+                  name="facebook"
+                  placeholder="@yourbusiness"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="li-bottom">LinkedIn Handle</label>
+              <input
+                type="text"
+                id="li-bottom"
+                name="linkedin"
+                placeholder="@yourbusiness"
+              />
+              <p class="field-note">
+                Leave any of the above blank if you're not on that platform.
+              </p>
+            </div>
+            <div class="field">
+              <label for="service-bottom"
+                >What do you want us to do for you?</label
+              >
+              <select id="service-bottom" name="service">
+                <option value="Website Development">Website Development</option>
+                <option value="Meta Ads Management">Meta Ads Management</option>
+                <option value="Social Media Management">
+                  Social Media Management
+                </option>
+                <option value="Brand Identity">Brand Identity</option>
+                <option value="Promotional Video">Promotional Video</option>
+                <option value="Full Package">
+                  Full Package (Website, Ads &amp; Social)
+                </option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="goal-bottom">What do you want to achieve?</label>
+              <textarea
+                id="goal-bottom"
+                name="goal"
+                placeholder="Tell us what success looks like for your business..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit">
+              Submit
+            </button>
+            <p class="form-status"></p>
+          </form>
         </div>
       </section>
 
@@ -906,51 +905,15 @@
         </div>
       </section>
 
-      <!-- PROCESS -->
-      <section class="process">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <p class="eyebrow">HOW IT WORKS</p>
-            <h2>From first call to live campaign.</h2>
-          </div>
-          <div class="process-grid">
-            <div class="process-step reveal">
-              <div class="num">01</div>
-              <h3>Free brand consultation</h3>
-              <p>
-                We learn your business, your customers, and what's actually
-                stopping sales right now.
-              </p>
-            </div>
-            <div class="process-step reveal">
-              <div class="num">02</div>
-              <h3>Package &amp; strategy built for you</h3>
-              <p>
-                We recommend the right mix of website, ads, and brand, and quote
-                it transparently. No hidden fees.
-              </p>
-            </div>
-            <div class="process-step reveal">
-              <div class="num">03</div>
-              <h3>Live in days, supported after</h3>
-              <p>
-                Your site and campaigns go live fast, and we stay on for
-                hosting, maintenance, and monthly reporting.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- PACKAGES -->
-      <section id="packages">
+      <section id="packages" style="background: var(--paper-dim)">
         <div class="wrap">
           <div class="section-head reveal">
             <p class="eyebrow">PACKAGES</p>
             <h2>Built around how you grow.</h2>
             <p>
-              Every package is tailored to your business. Reach out for a custom
-              quote, ad spend is included, not billed separately.
+              Every package is tailored to your business. Fill the form for a
+              custom quote, ad spend is included, not billed separately.
             </p>
           </div>
           <div class="pkg-grid">
@@ -967,7 +930,7 @@
                 <li>6 premium flyer designs</li>
                 <li>12 Meta ads set up + lead generation</li>
               </ul>
-              <a href="#contact" class="btn btn-outline" style="width: 100%"
+              <a href="#form-top" class="btn btn-outline" style="width: 100%"
                 >Get Started</a
               >
             </div>
@@ -985,7 +948,7 @@
                 <li>1 professional promo video</li>
                 <li>Email marketing + sales funnel consult</li>
               </ul>
-              <a href="#contact" class="btn btn-gold" style="width: 100%"
+              <a href="#form-top" class="btn btn-gold" style="width: 100%"
                 >Get Started</a
               >
             </div>
@@ -1002,7 +965,7 @@
                 <li>Marketing automation &amp; funnel build</li>
                 <li>Priority &amp; emergency support</li>
               </ul>
-              <a href="#contact" class="btn btn-outline" style="width: 100%"
+              <a href="#form-top" class="btn btn-outline" style="width: 100%"
                 >Request a Quote</a
               >
             </div>
@@ -1011,7 +974,7 @@
       </section>
 
       <!-- FAQ -->
-      <section id="faq" style="background: var(--paper-dim)">
+      <section id="faq">
         <div class="wrap" style="max-width: 760px">
           <div class="section-head reveal">
             <p class="eyebrow">QUESTIONS</p>
@@ -1031,7 +994,7 @@
               <p>
                 It depends on your business and what you need. A full website is
                 also included in the Essential Package, along with SEO,
-                security, and more. Reach out for a custom quote.
+                security, and more. Fill the form for a custom quote.
               </p>
             </details>
             <details class="faq-item reveal">
@@ -1052,89 +1015,11 @@
             <details class="faq-item reveal">
               <summary>How do I get started?</summary>
               <p>
-                Reach out through the form below, WhatsApp, or call +234 906 848
-                4193. We start with a free brand consultation before
-                recommending a package.
+                Fill the form on this page or call +234 906 848 4193. We start
+                with a free brand consultation before recommending a package.
               </p>
             </details>
           </div>
-        </div>
-      </section>
-
-      <!-- FINAL CTA / FORM -->
-      <section class="cta-final" id="contact">
-        <div class="wrap cta-grid">
-          <div class="reveal">
-            <p class="eyebrow" style="color: var(--gold-dim)">GET IN TOUCH</p>
-            <h2>
-              Let's build the digital presence that takes your business further.
-            </h2>
-            <p class="lead">
-              Tell us a bit about your business. We'll get back to you within 24
-              hours on business days, or message us on WhatsApp right now.
-            </p>
-            <div style="margin-bottom: 28px">
-              <p class="contact-detail"><b>Email:</b> info@dularis.com</p>
-              <p class="contact-detail">
-                <b>Phone:</b> +234 906 848 4193, +234 805 022 9643
-              </p>
-              <p class="contact-detail"><b>Location:</b> Lagos, Nigeria</p>
-            </div>
-            <a
-              href="https://wa.me/2349068484193"
-              class="btn btn-outline-light"
-              target="_blank"
-              rel="noopener"
-              >Chat on WhatsApp Instead</a
-            >
-          </div>
-
-          <form id="leadForm" class="reveal">
-            <div class="form-row">
-              <div class="field">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required />
-              </div>
-              <div class="field">
-                <label for="companyName">Company Name</label>
-                <input type="text" id="companyName" name="companyName" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required />
-              </div>
-            </div>
-            <div class="field">
-              <label for="service">What Do You Need?</label>
-              <select id="service" name="service">
-                <option value="Essential Package">Essential Package</option>
-                <option value="Growth Package">Growth Package</option>
-                <option value="Enterprise Package">Enterprise Package</option>
-                <option value="Meta Ads Only">Meta Ads Management Only</option>
-                <option value="Website Only">Website Only</option>
-                <option value="Brand Consultation">Brand Consultation</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us a bit about your business..."
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold form-submit">
-              Send via WhatsApp
-            </button>
-            <p class="form-status" id="formStatus"></p>
-          </form>
         </div>
       </section>
     </main>
@@ -1172,39 +1057,51 @@
         });
       }
 
-      const form = document.getElementById("leadForm");
-      const status = document.getElementById("formStatus");
+      // Both lead forms submit the same way: build an email to info@dularis.com
+      const leadForms = document.querySelectorAll(".lead-form");
+      leadForms.forEach(function (form) {
+        const status = form.querySelector(".form-status");
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        const fullName = document.getElementById("fullName").value.trim();
-        const companyName = document.getElementById("companyName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const service = document.getElementById("service").value;
-        const message = document.getElementById("message").value.trim();
+          const name = form.querySelector('[name="name"]').value.trim();
+          const business = form.querySelector('[name="business"]').value.trim();
+          const address = form.querySelector('[name="address"]').value.trim();
+          const instagram = form
+            .querySelector('[name="instagram"]')
+            .value.trim();
+          const facebook = form.querySelector('[name="facebook"]').value.trim();
+          const linkedin = form.querySelector('[name="linkedin"]').value.trim();
+          const service = form.querySelector('[name="service"]').value;
+          const goal = form.querySelector('[name="goal"]').value.trim();
 
-        if (!fullName || !email || !phone) {
-          status.textContent =
-            "Please fill in your name, email, and phone number.";
-          return;
-        }
+          if (!name || !business || !address) {
+            status.textContent =
+              "Please fill in your name, business name, and address.";
+            return;
+          }
 
-        const lines = [
-          "New lead from the Dularis landing page:",
-          "Name: " + fullName,
-          companyName ? "Company: " + companyName : null,
-          "Email: " + email,
-          "Phone: " + phone,
-          "Interested in: " + service,
-          message ? "Message: " + message : null,
-        ].filter(Boolean);
+          const lines = [
+            "Name: " + name,
+            "Business: " + business,
+            "Address: " + address,
+            instagram ? "Instagram: " + instagram : null,
+            facebook ? "Facebook: " + facebook : null,
+            linkedin ? "LinkedIn: " + linkedin : null,
+            "What they want us to do: " + service,
+            goal ? "What they want to achieve: " + goal : null,
+          ].filter(Boolean);
 
-        const waText = encodeURIComponent(lines.join("\n"));
-        status.textContent = "Opening WhatsApp...";
-        window.open("https://wa.me/2349068484193?text=" + waText, "_blank");
-        form.reset();
+          const subject = encodeURIComponent(
+            "New lead from Dularis landing page: " + business,
+          );
+          const body = encodeURIComponent(lines.join("\n"));
+          status.textContent = "Opening your email app to send this to us...";
+          window.location.href =
+            "mailto:info@dularis.com?subject=" + subject + "&body=" + body;
+          form.reset();
+        });
       });
     </script>
   </body>
