@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon" href="img/favicon-dularis-192.png" />
     <meta
       name="description"
-      content="Dularis builds your website, brand, and Meta ad campaigns as one team, live in days, priced transparently. Lagos-based, serving businesses everywhere."
+      content="Dularis builds your website, brand, and marketing as one team, live in days, priced transparently. Lagos-based, serving businesses everywhere."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -94,9 +94,9 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(250, 246, 238, 0.92);
+        background: linear-gradient(160deg, #0a1226, #101f3d);
         backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .header-inner {
         display: flex;
@@ -111,6 +111,13 @@
         font-weight: 600;
         font-size: 22px;
         letter-spacing: -0.01em;
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        height: 60px;
+        width: auto;
+        display: block;
       }
       .header-cta {
         display: flex;
@@ -119,7 +126,7 @@
       }
       .phone-link {
         font-size: 14px;
-        color: var(--stone);
+        color: rgba(255, 255, 255, 0.75);
         display: none;
       }
       @media (min-width: 640px) {
@@ -190,23 +197,68 @@
         max-width: 64ch;
       }
       .hero {
-        padding: 40px 0 56px;
+        padding: 88px 0;
+        background: linear-gradient(160deg, #0a1226, #101f3d);
+        color: #ffffff;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -180px;
+        right: -140px;
+        width: 460px;
+        height: 460px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(201, 150, 46, 0.28),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -200px;
+        left: -120px;
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(27, 75, 68, 0.35),
+          transparent 70%
+        );
+        pointer-events: none;
       }
       .hero .wrap {
         max-width: 760px;
+        position: relative;
+        z-index: 1;
       }
       .hero h1 {
-        font-size: clamp(32px, 5vw, 50px);
-        line-height: 1.08;
-        font-weight: 600;
+        font-size: clamp(32px, 5vw, 52px);
+        line-height: 1.1;
+        font-weight: 700;
         letter-spacing: -0.02em;
-        margin-bottom: 18px;
+        margin-bottom: 26px;
+        color: #ffffff;
+      }
+      .hero-lead-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-left: 3px solid var(--gold);
+        border-radius: 6px;
+        padding: 22px 26px;
+        max-width: 52ch;
+        margin-bottom: 28px;
       }
       .hero p.lead {
-        font-size: 17px;
-        color: var(--stone);
-        max-width: 52ch;
-        margin-bottom: 6px;
+        font-size: 16.5px;
+        color: rgba(255, 255, 255, 0.82);
+        margin: 0;
       }
 
       /* ---------- lead form ---------- */
@@ -336,9 +388,7 @@
       .service-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
+        gap: 20px;
       }
       @media (max-width: 860px) {
         .service-grid {
@@ -352,32 +402,45 @@
       }
       .service-cell {
         background: var(--paper);
-        padding: 28px 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 30px 26px;
+        position: relative;
+        overflow: hidden;
       }
-      .service-cell.featured {
-        background: var(--ink);
-        color: var(--paper);
+      .service-cell::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--teal));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s ease;
+      }
+      .service-cell:hover::before {
+        transform: scaleX(1);
+      }
+      .service-cell .num {
+        font-family: "Fraunces", serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--gold);
+        letter-spacing: 0.04em;
+        margin-bottom: 14px;
+        display: block;
       }
       .service-cell h3 {
-        font-size: 16px;
+        font-size: 17px;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: 9px;
         font-family: "Inter", sans-serif;
       }
       .service-cell p {
         font-size: 14px;
         color: var(--stone);
-      }
-      .service-cell.featured p {
-        color: rgba(250, 246, 238, 0.72);
-      }
-      .service-cell .tag {
-        font-size: 11px;
-        color: var(--gold);
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        margin-bottom: 10px;
-        display: block;
       }
 
       /* ---------- packages ---------- */
@@ -598,7 +661,9 @@
   <body>
     <header>
       <div class="header-inner">
-        <a href="#" class="logo">Dularis</a>
+        <a href="#" class="logo">
+          <img src="img/dularis.png" alt="Dularis" />
+        </a>
         <div class="header-cta">
           <a href="tel:+2349068484193" class="phone-link">+234 906 848 4193</a>
           <a href="#form-top" class="btn btn-gold">Fill The Form</a>
@@ -607,35 +672,19 @@
     </header>
 
     <main>
-      <!-- BRIEF INTRO + HERO -->
-      <section class="intro">
-        <div class="wrap">
-          <p class="eyebrow hero-anim d1">DULARIS, LAGOS</p>
-          <p class="body-text hero-anim d2">
-            Dularis is a digital agency in Lagos that builds websites, runs Meta
-            ad campaigns, and manages the brand and social presence businesses
-            need to be found online, all handled by one team.
-          </p>
-          <p class="body-text hero-anim d3">
-            Instead of juggling a designer, an ads person, and a social media
-            manager who never talk to each other, you get one team that builds
-            your website, sets up your ads, and keeps your brand consistent
-            everywhere, so your business shows up looking ready for customers.
-          </p>
-        </div>
-      </section>
-
       <section class="hero">
         <div class="wrap">
           <h1 class="hero-anim d1">
             Take your business or brand to the next level through sustainable
             digital solutions.
           </h1>
-          <p class="lead hero-anim d2">
-            Fill the form below and our team will have a discovery session with
-            your business within the next 24 hours, so we understand exactly
-            what you need and what we can do for you.
-          </p>
+          <div class="hero-lead-card hero-anim d2">
+            <p class="lead">
+              Fill the form below and our team will have a discovery session
+              with your business within the next 24 hours, so we understand
+              exactly what you need and what we can do for you.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -643,10 +692,11 @@
       <section class="form-section" id="form-top">
         <div class="wrap">
           <div class="form-head">
-            <h2>Tell us about your business</h2>
+            <h2>Let's understand your business</h2>
             <p>
-              Fill this in and we'll get in contact with you within a maximum of
-              24 hours.
+              The more you tell us, the sharper our recommendation. Share the
+              details below and a member of our team will reach out within 24
+              hours with a plan built specifically for you.
             </p>
           </div>
 
@@ -709,14 +759,13 @@
               >
               <select id="service-top" name="service">
                 <option value="Website Development">Website Development</option>
-                <option value="Meta Ads Management">Meta Ads Management</option>
                 <option value="Social Media Management">
                   Social Media Management
                 </option>
                 <option value="Brand Identity">Brand Identity</option>
                 <option value="Promotional Video">Promotional Video</option>
                 <option value="Full Package">
-                  Full Package (Website, Ads &amp; Social)
+                  Full Package (Website, Marketing &amp; Social)
                 </option>
                 <option value="Other">Other</option>
               </select>
@@ -731,8 +780,12 @@
               ></textarea>
             </div>
             <button type="submit" class="btn btn-gold form-submit">
-              Submit
+              Get My Custom Plan
             </button>
+            <p class="field-note" style="margin-top: -4px">
+              Your information is confidential and used only to prepare your
+              recommendation.
+            </p>
             <p class="form-status"></p>
           </form>
         </div>
@@ -744,18 +797,9 @@
           <p class="eyebrow reveal">OUR STORY</p>
           <h2 class="reveal">Why Dularis exists</h2>
           <p class="reveal">
-            Too many businesses lose customers not because their product isn't
-            good enough, but because they're hard to find online, or because
-            their website, ads, and social media all tell a different story.
-            Dularis was built to fix that: one team handling your website, your
-            Meta ads, and your brand together, so everything a customer sees
-            points the same way.
-          </p>
-          <p class="reveal">
-            We work with business owners across Lagos and beyond who want to
-            look as credible online as they are in person, and who want it done
-            fast, transparently priced, and properly maintained after launch,
-            not abandoned once the invoice is paid.
+            We help businesses build stronger brands, establish a professional
+            digital presence, and grow through strategy, technology, and
+            creative solutions.
           </p>
         </div>
       </section>
@@ -766,8 +810,9 @@
           <div class="form-head">
             <h2>Ready to get started?</h2>
             <p>
-              Fill this in and we'll get in contact with you within a maximum of
-              24 hours.
+              Tell us where your business stands today and where you want it to
+              go. We'll review it personally and respond within 24 hours with a
+              clear next step.
             </p>
           </div>
 
@@ -835,14 +880,13 @@
               >
               <select id="service-bottom" name="service">
                 <option value="Website Development">Website Development</option>
-                <option value="Meta Ads Management">Meta Ads Management</option>
                 <option value="Social Media Management">
                   Social Media Management
                 </option>
                 <option value="Brand Identity">Brand Identity</option>
                 <option value="Promotional Video">Promotional Video</option>
                 <option value="Full Package">
-                  Full Package (Website, Ads &amp; Social)
+                  Full Package (Website, Marketing &amp; Social)
                 </option>
                 <option value="Other">Other</option>
               </select>
@@ -857,8 +901,12 @@
               ></textarea>
             </div>
             <button type="submit" class="btn btn-gold form-submit">
-              Submit
+              Get My Custom Plan
             </button>
+            <p class="field-note" style="margin-top: -4px">
+              Your information is confidential and used only to prepare your
+              recommendation.
+            </p>
             <p class="form-status"></p>
           </form>
         </div>
@@ -868,24 +916,17 @@
       <section id="services">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="eyebrow">WHAT WE DO</p>
-            <h2>Everything your brand needs, handled by one team.</h2>
+            <p class="eyebrow">FOR YOUR BUSINESS</p>
+            <h2>What We Will Do For Your Business.</h2>
             <p>
-              Meta ads work best when the page they land on, the brand behind
-              them, and the offer are all pulling in the same direction. That's
-              the whole idea behind Dularis.
+              We build the website, brand, and marketing your business needs to
+              be found, trusted, and chosen, so every part of your online
+              presence works together to bring in more customers.
             </p>
           </div>
           <div class="service-grid">
-            <div class="service-cell featured reveal">
-              <span class="tag">MOST REQUESTED</span>
-              <h3>Meta Ads Management</h3>
-              <p>
-                Facebook &amp; Instagram campaigns built to bring in real,
-                qualified leads, not just clicks.
-              </p>
-            </div>
             <div class="service-cell reveal">
+              <span class="num">01</span>
               <h3>Website Design</h3>
               <p>
                 Custom business sites, landing pages &amp; online stores that
@@ -893,6 +934,7 @@
               </p>
             </div>
             <div class="service-cell reveal">
+              <span class="num">02</span>
               <h3>Digital Marketing</h3>
               <p>
                 Social media, SEO, paid ads &amp; email campaigns working
@@ -900,6 +942,7 @@
               </p>
             </div>
             <div class="service-cell reveal">
+              <span class="num">03</span>
               <h3>Brand Identity</h3>
               <p>
                 Logo, business cards, flyers &amp; brand guidelines that make
@@ -907,6 +950,7 @@
               </p>
             </div>
             <div class="service-cell reveal">
+              <span class="num">04</span>
               <h3>Google Business Setup</h3>
               <p>
                 Show up on Google Maps and local search when people are ready to
@@ -914,6 +958,7 @@
               </p>
             </div>
             <div class="service-cell reveal">
+              <span class="num">05</span>
               <h3>Social Media Management</h3>
               <p>
                 Content calendars, posting &amp; community engagement, handled
@@ -947,7 +992,6 @@
                 <li>Brand discovery session &amp; audit</li>
                 <li>Management of 1 social platform</li>
                 <li>6 premium flyer designs</li>
-                <li>12 Meta ads set up + lead generation</li>
               </ul>
               <a href="#form-top" class="btn btn-outline" style="width: 100%"
                 >Get Started</a
@@ -963,7 +1007,7 @@
                 <li>Advanced SEO &amp; landing page creation</li>
                 <li>Business consulting, 4 sessions</li>
                 <li>Management of 2 social platforms</li>
-                <li>Up to 24 Meta ads campaigns</li>
+                <li>Extended digital marketing campaigns</li>
                 <li>1 professional promo video</li>
                 <li>Email marketing + sales funnel consult</li>
               </ul>
@@ -1003,9 +1047,9 @@
             <details class="faq-item reveal" open>
               <summary>Does the package price include ad spend?</summary>
               <p>
-                Yes. Each package includes a specific Meta ads spend allocation
-                as part of the total price, so ad spend is transparently built
-                in rather than billed separately.
+                Yes. Each package includes a specific ad spend allocation as
+                part of the total price, so ad spend is transparently built in
+                rather than billed separately.
               </p>
             </details>
             <details class="faq-item reveal">
