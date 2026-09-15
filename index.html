@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dularis: Will They Find You or Your Competitor?</title>
+    <meta
+      name="description"
+      content="Dularis builds your website, brand, and Meta ad campaigns as one team, live in days, priced transparently. Lagos-based, serving businesses everywhere."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #101a2c;
+        --ink-soft: #1b2a44;
+        --paper: #faf6ee;
+        --paper-dim: #f1ead9;
+        --gold: #c9962e;
+        --gold-dim: #e8ce9c;
+        --teal: #1b4b44;
+        --stone: #6b6458;
+        --line: rgba(16, 26, 44, 0.12);
+        --line-light: rgba(250, 246, 238, 0.16);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        padding: 88px 0;
+      }
+      @media (max-width: 720px) {
+        section {
+          padding: 56px 0;
+        }
+      }
+
+      /* ---------- header ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 246, 238, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+      .logo {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+      }
+      .header-cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .phone-link {
+        font-size: 14px;
+        color: var(--stone);
+        display: none;
+      }
+      @media (min-width: 640px) {
+        .phone-link {
+          display: inline;
+        }
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 22px;
+        border-radius: 2px;
+        font-weight: 600;
+        font-size: 14px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          background 0.15s ease;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: var(--ink);
+      }
+      .btn-gold:hover {
+        background: #b98826;
+      }
+      .btn-ink {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .btn-ink:hover {
+        background: var(--ink-soft);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .btn-outline-light {
+        background: transparent;
+        color: var(--paper);
+        border-color: var(--line-light);
+      }
+      .btn-outline-light:hover {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        padding: 72px 0 56px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 56px;
+        align-items: start;
+      }
+      @media (max-width: 860px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
+      .eyebrow {
+        font-size: 13px;
+        color: var(--teal);
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: clamp(34px, 5vw, 56px);
+        line-height: 1.06;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 22px;
+      }
+      .hero p.lead {
+        font-size: 18px;
+        color: var(--stone);
+        max-width: 46ch;
+        margin-bottom: 32px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+      }
+      .hero-note {
+        font-size: 13px;
+        color: var(--stone);
+      }
+      .stat-card {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 32px;
+        border-radius: 2px;
+        position: relative;
+      }
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line-light);
+      }
+      .stat-row:last-child {
+        border-bottom: none;
+      }
+      .stat-num {
+        font-family: "Fraunces", serif;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--gold);
+      }
+      .stat-label {
+        font-size: 13px;
+        color: rgba(250, 246, 238, 0.72);
+        max-width: 16ch;
+        text-align: right;
+      }
+
+      /* ---------- agitation strip ---------- */
+      .strip {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .strip .wrap {
+        padding: 0 24px;
+      }
+      .strip-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+      @media (max-width: 780px) {
+        .strip-grid {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+      .strip h3 {
+        font-size: 19px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .strip p {
+        font-size: 14.5px;
+        color: rgba(250, 246, 238, 0.7);
+      }
+      .strip-num {
+        font-family: "Fraunces", serif;
+        color: var(--gold);
+        font-size: 15px;
+        margin-bottom: 14px;
+        display: block;
+      }
+
+      /* ---------- services ---------- */
+      .section-head {
+        max-width: 56ch;
+        margin-bottom: 48px;
+      }
+      .section-head .eyebrow {
+        margin-bottom: 14px;
+      }
+      .section-head h2 {
+        font-size: clamp(26px, 3.6vw, 38px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        margin-bottom: 14px;
+      }
+      .section-head p {
+        color: var(--stone);
+        font-size: 16px;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      @media (max-width: 860px) {
+        .service-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .service-cell {
+        background: var(--paper);
+        padding: 28px 24px;
+      }
+      .service-cell.featured {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .service-cell h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-family: "Inter", sans-serif;
+      }
+      .service-cell p {
+        font-size: 14px;
+        color: var(--stone);
+      }
+      .service-cell.featured p {
+        color: rgba(250, 246, 238, 0.72);
+      }
+      .service-cell .tag {
+        font-size: 11px;
+        color: var(--gold);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      /* ---------- process ---------- */
+      .process {
+        background: var(--paper-dim);
+      }
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      @media (max-width: 780px) {
+        .process-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
+      .process-step .num {
+        font-family: "Fraunces", serif;
+        font-size: 44px;
+        color: var(--gold-dim);
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+      .process-step h3 {
+        font-size: 19px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-family: "Inter", sans-serif;
+      }
+      .process-step p {
+        color: var(--stone);
+        font-size: 14.5px;
+      }
+
+      /* ---------- packages ---------- */
+      .pkg-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border: 1px solid var(--line);
+      }
+      @media (max-width: 860px) {
+        .pkg-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pkg {
+        padding: 36px 28px;
+        border-right: 1px solid var(--line);
+        position: relative;
+      }
+      .pkg:last-child {
+        border-right: none;
+      }
+      @media (max-width: 860px) {
+        .pkg {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+        .pkg:last-child {
+          border-bottom: none;
+        }
+      }
+      .pkg.popular {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .pkg-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--gold);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 12px;
+      }
+      .pkg h3 {
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .pkg .price {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 14px 0 4px;
+        font-family: "Fraunces", serif;
+      }
+      .pkg .price-sub {
+        font-size: 12.5px;
+        color: var(--stone);
+        margin-bottom: 22px;
+      }
+      .pkg.popular .price-sub {
+        color: rgba(250, 246, 238, 0.65);
+      }
+      .pkg ul {
+        list-style: none;
+        margin-bottom: 26px;
+      }
+      .pkg li {
+        font-size: 13.5px;
+        padding: 8px 0;
+        border-top: 1px solid var(--line);
+        color: var(--stone);
+      }
+      .pkg.popular li {
+        border-top: 1px solid var(--line-light);
+        color: rgba(250, 246, 238, 0.82);
+      }
+      .pkg li:first-child {
+        border-top: none;
+      }
+      .pkg-desc {
+        font-size: 13.5px;
+        color: var(--stone);
+        margin-bottom: 18px;
+      }
+      .pkg.popular .pkg-desc {
+        color: rgba(250, 246, 238, 0.7);
+      }
+
+      /* ---------- faq ---------- */
+      .faq-item {
+        border-top: 1px solid var(--line);
+        padding: 22px 0;
+      }
+      .faq-item:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .faq-item summary {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary::after {
+        content: "+";
+        font-family: "Fraunces", serif;
+        font-size: 22px;
+        color: var(--gold);
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+      }
+      .faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+      .faq-item p {
+        margin-top: 12px;
+        color: var(--stone);
+        font-size: 14.5px;
+        max-width: 64ch;
+      }
+
+      /* ---------- final cta / form ---------- */
+      .cta-final {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .cta-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      @media (max-width: 860px) {
+        .cta-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+      }
+      .cta-final h2 {
+        font-size: clamp(26px, 3.6vw, 36px);
+        font-weight: 600;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      }
+      .cta-final p.lead {
+        color: rgba(250, 246, 238, 0.72);
+        font-size: 15.5px;
+        margin-bottom: 28px;
+        max-width: 44ch;
+      }
+      .contact-detail {
+        font-size: 14px;
+        color: rgba(250, 246, 238, 0.7);
+        margin-bottom: 10px;
+      }
+      .contact-detail b {
+        color: var(--paper);
+        font-weight: 600;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      @media (max-width: 480px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      label {
+        font-size: 12.5px;
+        color: rgba(250, 246, 238, 0.65);
+        margin-bottom: 6px;
+        display: block;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        background: var(--ink-soft);
+        border: 1px solid var(--line-light);
+        color: var(--paper);
+        padding: 11px 12px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        border-radius: 2px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid var(--gold);
+        outline-offset: 1px;
+      }
+      textarea {
+        min-height: 88px;
+        resize: vertical;
+      }
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23C9962E'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-submit {
+        margin-top: 6px;
+      }
+      .form-status {
+        font-size: 13px;
+        color: var(--gold-dim);
+        margin-top: 8px;
+        min-height: 18px;
+      }
+
+      /* ---------- footer ---------- */
+      footer {
+        padding: 32px 0;
+        border-top: 1px solid var(--line);
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .footer-inner p {
+        font-size: 13px;
+        color: var(--stone);
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      /* ---------- hero entrance (plays once on load) ---------- */
+      .hero-anim {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: heroIn 0.7s ease forwards;
+      }
+      .hero-anim.d1 {
+        animation-delay: 0.05s;
+      }
+      .hero-anim.d2 {
+        animation-delay: 0.15s;
+      }
+      .hero-anim.d3 {
+        animation-delay: 0.28s;
+      }
+      .hero-anim.d4 {
+        animation-delay: 0.4s;
+      }
+      .hero-anim.d5 {
+        animation-delay: 0.5s;
+      }
+      @keyframes heroIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ---------- scroll reveal (plays once per element, on scroll into view) ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal:nth-child(1) {
+        transition-delay: 0s;
+      }
+      .reveal:nth-child(2) {
+        transition-delay: 0.08s;
+      }
+      .reveal:nth-child(3) {
+        transition-delay: 0.16s;
+      }
+      .reveal:nth-child(4) {
+        transition-delay: 0.24s;
+      }
+      .reveal:nth-child(5) {
+        transition-delay: 0.32s;
+      }
+      .reveal:nth-child(6) {
+        transition-delay: 0.4s;
+      }
+
+      /* ---------- interactive lift on hover ---------- */
+      .service-cell,
+      .process-step,
+      .pkg {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .service-cell:hover,
+      .pkg:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(16, 26, 44, 0.08);
+      }
+      .process-step:hover .num {
+        transform: translateX(4px);
+      }
+      .process-step .num {
+        transition: transform 0.25s ease;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .btn:hover {
+          transform: none;
+        }
+        .hero-anim {
+          opacity: 1 !important;
+          transform: none !important;
+          animation: none !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        .service-cell:hover,
+        .pkg:hover,
+        .process-step:hover .num {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="#" class="logo">Dularis</a>
+        <div class="header-cta">
+          <a href="tel:+2349068484193" class="phone-link">+234 906 848 4193</a>
+          <a
+            href="https://wa.me/2349068484193"
+            class="btn btn-ink"
+            target="_blank"
+            rel="noopener"
+            >WhatsApp Us</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow hero-anim d1">
+              DIGITAL BRAND MANAGEMENT & CREATIVE SOLUTIONS, LAGOS
+            </p>
+            <h1 class="hero-anim d2">
+              Your next customer is already searching. Will they find you or
+              your competitor?
+            </h1>
+            <p class="lead hero-anim d3">
+              Dularis runs your Meta ads, builds the website they land on, and
+              keeps your brand looking credible. One team, no juggling
+              freelancers, live in days.
+            </p>
+            <div class="hero-ctas hero-anim d4">
+              <a href="#contact" class="btn btn-gold"
+                >Book Your Discovery Meeting</a
+              >
+              <a href="#packages" class="btn btn-outline">See What We Offer</a>
+            </div>
+            <p class="hero-note hero-anim d5">
+              No pressure. No unnecessary packages. Just a conversation about
+              your business.
+            </p>
+          </div>
+          <div class="stat-card hero-anim d3">
+            <div class="stat-row">
+              <span class="stat-num">19</span>
+              <span class="stat-label">services under one roof</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">1</span>
+              <span class="stat-label">team, no silos, no handoffs</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">transparent, upfront pricing</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">24h</span>
+              <span class="stat-label">typical response time</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AGITATION / WHY -->
+      <section class="strip">
+        <div class="wrap">
+          <div class="strip-grid">
+            <div class="reveal">
+              <span class="strip-num">The old way</span>
+              <h3>Three freelancers, three stories</h3>
+              <p>
+                Your designer, your ad guy, and your social media person don't
+                talk to each other, and your brand looks like it.
+              </p>
+            </div>
+            <div class="reveal">
+              <span class="strip-num">The old way</span>
+              <h3>Months to get live</h3>
+              <p>
+                By the time the website's finally done, the campaign you wanted
+                to run has lost its moment.
+              </p>
+            </div>
+            <div class="reveal">
+              <span class="strip-num">The Dularis way</span>
+              <h3>One team, days not months, one clear price</h3>
+              <p>
+                Strategy, design, website, and Meta ads, handled together, with
+                hosting and maintenance that doesn't disappear after launch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="eyebrow">WHAT WE DO</p>
+            <h2>Everything your brand needs, handled by one team.</h2>
+            <p>
+              Meta ads work best when the page they land on, the brand behind
+              them, and the offer are all pulling in the same direction. That's
+              the whole idea behind Dularis.
+            </p>
+          </div>
+          <div class="service-grid">
+            <div class="service-cell featured reveal">
+              <span class="tag">MOST REQUESTED</span>
+              <h3>Meta Ads Management</h3>
+              <p>
+                Facebook &amp; Instagram campaigns built to bring in real,
+                qualified leads, not just clicks.
+              </p>
+            </div>
+            <div class="service-cell reveal">
+              <h3>Website Design</h3>
+              <p>
+                Custom business sites, landing pages &amp; online stores that
+                convert visitors into customers.
+              </p>
+            </div>
+            <div class="service-cell reveal">
+              <h3>Digital Marketing</h3>
+              <p>
+                Social media, SEO, paid ads &amp; email campaigns working
+                together.
+              </p>
+            </div>
+            <div class="service-cell reveal">
+              <h3>Brand Identity</h3>
+              <p>
+                Logo, business cards, flyers &amp; brand guidelines that make
+                you look credible.
+              </p>
+            </div>
+            <div class="service-cell reveal">
+              <h3>Google Business Setup</h3>
+              <p>
+                Show up on Google Maps and local search when people are ready to
+                buy.
+              </p>
+            </div>
+            <div class="service-cell reveal">
+              <h3>Social Media Management</h3>
+              <p>
+                Content calendars, posting &amp; community engagement, handled
+                for you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="process">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="eyebrow">HOW IT WORKS</p>
+            <h2>From first call to live campaign.</h2>
+          </div>
+          <div class="process-grid">
+            <div class="process-step reveal">
+              <div class="num">01</div>
+              <h3>Free brand consultation</h3>
+              <p>
+                We learn your business, your customers, and what's actually
+                stopping sales right now.
+              </p>
+            </div>
+            <div class="process-step reveal">
+              <div class="num">02</div>
+              <h3>Package &amp; strategy built for you</h3>
+              <p>
+                We recommend the right mix of website, ads, and brand, and quote
+                it transparently. No hidden fees.
+              </p>
+            </div>
+            <div class="process-step reveal">
+              <div class="num">03</div>
+              <h3>Live in days, supported after</h3>
+              <p>
+                Your site and campaigns go live fast, and we stay on for
+                hosting, maintenance, and monthly reporting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES -->
+      <section id="packages">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="eyebrow">PACKAGES</p>
+            <h2>Built around how you grow.</h2>
+            <p>
+              Every package is tailored to your business. Reach out for a custom
+              quote, ad spend is included, not billed separately.
+            </p>
+          </div>
+          <div class="pkg-grid">
+            <div class="pkg reveal">
+              <h3>Essential</h3>
+              <p class="pkg-desc" style="margin-top: 16px">
+                For businesses ready for full, ongoing management.
+              </p>
+              <ul>
+                <li>Optimised website development</li>
+                <li>Basic SEO &amp; Google Business setup</li>
+                <li>Brand discovery session &amp; audit</li>
+                <li>Management of 1 social platform</li>
+                <li>6 premium flyer designs</li>
+                <li>12 Meta ads set up + lead generation</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline" style="width: 100%"
+                >Get Started</a
+              >
+            </div>
+            <div class="pkg popular reveal">
+              <span class="pkg-badge">MOST POPULAR</span>
+              <h3>Growth</h3>
+              <p class="pkg-desc" style="margin-top: 16px">
+                Everything in Essential, plus deeper strategy and reach.
+              </p>
+              <ul>
+                <li>Advanced SEO &amp; landing page creation</li>
+                <li>Business consulting, 4 sessions</li>
+                <li>Management of 2 social platforms</li>
+                <li>Up to 24 Meta ads campaigns</li>
+                <li>1 professional promo video</li>
+                <li>Email marketing + sales funnel consult</li>
+              </ul>
+              <a href="#contact" class="btn btn-gold" style="width: 100%"
+                >Get Started</a
+              >
+            </div>
+            <div class="pkg reveal">
+              <h3>Enterprise</h3>
+              <p class="pkg-desc" style="margin-top: 16px">
+                For corporate brands needing dedicated, full-scale management.
+              </p>
+              <ul>
+                <li>Premium corporate website + CRO</li>
+                <li>Executive brand consulting, 6 sessions</li>
+                <li>Dedicated account manager</li>
+                <li>Up to 4 social platforms</li>
+                <li>Marketing automation &amp; funnel build</li>
+                <li>Priority &amp; emergency support</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline" style="width: 100%"
+                >Request a Quote</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" style="background: var(--paper-dim)">
+        <div class="wrap" style="max-width: 760px">
+          <div class="section-head reveal">
+            <p class="eyebrow">QUESTIONS</p>
+            <h2>Common questions about Dularis.</h2>
+          </div>
+          <div>
+            <details class="faq-item reveal" open>
+              <summary>Does the package price include ad spend?</summary>
+              <p>
+                Yes. Each package includes a specific Meta ads spend allocation
+                as part of the total price, so ad spend is transparently built
+                in rather than billed separately.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>How much does a website cost with Dularis?</summary>
+              <p>
+                It depends on your business and what you need. A full website is
+                also included in the Essential Package, along with SEO,
+                security, and more. Reach out for a custom quote.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>How many services does Dularis offer?</summary>
+              <p>
+                19 services covering website development, digital marketing, and
+                brand materials, all delivered by one team, so your brand speaks
+                with one voice everywhere.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>Where is Dularis based?</summary>
+              <p>
+                Lagos, Nigeria, serving businesses that want a consistent,
+                professional brand presence, locally and beyond.
+              </p>
+            </details>
+            <details class="faq-item reveal">
+              <summary>How do I get started?</summary>
+              <p>
+                Reach out through the form below, WhatsApp, or call +234 906 848
+                4193. We start with a free brand consultation before
+                recommending a package.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA / FORM -->
+      <section class="cta-final" id="contact">
+        <div class="wrap cta-grid">
+          <div class="reveal">
+            <p class="eyebrow" style="color: var(--gold-dim)">GET IN TOUCH</p>
+            <h2>
+              Let's build the digital presence that takes your business further.
+            </h2>
+            <p class="lead">
+              Tell us a bit about your business. We'll get back to you within 24
+              hours on business days, or message us on WhatsApp right now.
+            </p>
+            <div style="margin-bottom: 28px">
+              <p class="contact-detail"><b>Email:</b> info@dularis.com</p>
+              <p class="contact-detail">
+                <b>Phone:</b> +234 906 848 4193, +234 805 022 9643
+              </p>
+              <p class="contact-detail"><b>Location:</b> Lagos, Nigeria</p>
+            </div>
+            <a
+              href="https://wa.me/2349068484193"
+              class="btn btn-outline-light"
+              target="_blank"
+              rel="noopener"
+              >Chat on WhatsApp Instead</a
+            >
+          </div>
+
+          <form id="leadForm" class="reveal">
+            <div class="form-row">
+              <div class="field">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required />
+              </div>
+              <div class="field">
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" name="companyName" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="service">What Do You Need?</label>
+              <select id="service" name="service">
+                <option value="Essential Package">Essential Package</option>
+                <option value="Growth Package">Growth Package</option>
+                <option value="Enterprise Package">Enterprise Package</option>
+                <option value="Meta Ads Only">Meta Ads Management Only</option>
+                <option value="Website Only">Website Only</option>
+                <option value="Brand Consultation">Brand Consultation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us a bit about your business..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit">
+              Send via WhatsApp
+            </button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <p>© <span id="year"></span> Dularis. All rights reserved.</p>
+        <p>Lagos, Nigeria · info@dularis.com</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Scroll-triggered reveal animation
+      const revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+        revealEls.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        revealEls.forEach(function (el) {
+          el.classList.add("in-view");
+        });
+      }
+
+      const form = document.getElementById("leadForm");
+      const status = document.getElementById("formStatus");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const companyName = document.getElementById("companyName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value.trim();
+
+        if (!fullName || !email || !phone) {
+          status.textContent =
+            "Please fill in your name, email, and phone number.";
+          return;
+        }
+
+        const lines = [
+          "New lead from the Dularis landing page:",
+          "Name: " + fullName,
+          companyName ? "Company: " + companyName : null,
+          "Email: " + email,
+          "Phone: " + phone,
+          "Interested in: " + service,
+          message ? "Message: " + message : null,
+        ].filter(Boolean);
+
+        const waText = encodeURIComponent(lines.join("\n"));
+        status.textContent = "Opening WhatsApp...";
+        window.open("https://wa.me/2349068484193?text=" + waText, "_blank");
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
